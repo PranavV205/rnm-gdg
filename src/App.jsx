@@ -51,7 +51,7 @@ function App() {
 
   return (
     <>
-      <div className="overflow-x-hidden h-screen w-screen bg-gray-100 p-10">
+      <div className="overflow-x-hidden h-screen w-screen p-10 bg-slate-200">
 
         {/* using form only for accessibility and feature of pressing 'Enter' to submit */}
 
