@@ -32,16 +32,23 @@ function Character() {
         <>
             <div className="p-10 bg-slate-200 min-h-screen">
                 <Card character={character} />
-                <p className="text-3xl font-bold my-4">Episodes: </p>
-                <div className="grid grid-cols-2">
-                    {character && character.episode && (
-                        character.episode.map((episode, index) => (
-                            <Link to={episode}>
-                                <p className="text-xl">{episode}</p>
-                            </Link>
-                        ))
-                    )}
-                </div>
+
+
+                {character && character.episode && (
+                    <>
+
+                        <p className="text-3xl font-bold my-4">Episodes: </p>
+                        <div className="grid grid-cols-2">
+                            {character.episode.map((episode, index) => (
+                                <Link to={episode}>
+                                    <p className="text-xl">{episode}</p>
+                                </Link>
+                            ))}
+                        </div>
+
+                    </>
+
+                )}
             </div>
         </>
     )
