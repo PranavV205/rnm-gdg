@@ -30,12 +30,15 @@ function Character() {
 
     return (
         <>
-            <div className="p-10 bg-slate-200 min-h-screen">
+            <div className="p-10 bg-slate-200">
+
+
+
                 <Card character={character} />
 
 
                 {character && character.episode && (
-                    <>
+                    <div className="">
 
                         <p className="text-3xl font-bold my-4">Episodes: </p>
                         <div className="grid grid-cols-2">
@@ -46,7 +49,7 @@ function Character() {
                             ))}
                         </div>
 
-                    </>
+                    </div>
 
                 )}
             </div>
