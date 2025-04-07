@@ -10,14 +10,13 @@ function App() {
   const [character, setCharacter] = useState(null)
   const [input, setInput] = useState('')
 
+  const BASE_URL = 'https://rickandmortyapi.com/api'
+
   useEffect(() => {
-
-    const url = 'https://rickandmortyapi.com/api/character'
-
     const fetchData = async () => {
 
       try {
-        const response = await fetch(url)
+        const response = await fetch(`${BASE_URL}/character`)
         const data = await response.json()
         console.log(data)
         setCharacter(data.results[0])
@@ -39,7 +38,7 @@ function App() {
 
   const fetchCharacters = async (e) => {
     e.preventDefault(0)
-    const url = `https://rickandmortyapi.com/api/character?name=${input}`
+    const url = `${BASE_URL}/character?name=${input}`
     try {
       const response = await fetch(url)
       const data = await response.json()
