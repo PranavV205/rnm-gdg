@@ -2,7 +2,7 @@
 # React Project 
     
 
-### 1. App.jsx
+### 1. Update App.jsx
 
 ```javascript
 function App() {
@@ -251,7 +251,7 @@ export default App
 ### 6. Create component Card.jsx
 Create a folder name **components** inside the *src* folder. Create a file named **Card.jsx** inside the newly created components folder.
 
-```
+```javascript
 function Card({ character }) {
     return (
         <>
@@ -365,7 +365,7 @@ export default App
 ### 7. Update App.jsx
 Conditionally rendering a character card or the results of a search query.
 
-```
+```javascript
 import { useEffect, useState } from "react"
 import logo from "./assets/image.png"
 import Card from "./components/Card"
@@ -463,8 +463,7 @@ Fixing issue.
 ```javascript
 import { useEffect, useState } from "react"
 import Card from "./components/Card"
-import { Link } from "react-router"
-import logo from "./assets/logo.png"
+import logo from "./assets/image.png"
 
 
 function App() {
@@ -526,11 +525,11 @@ function App() {
               type="text"
               value={input}
               onChange={e => setInput(e.target.value)}
-              className=" rounded-lg text-lg pl-3 py-1"
+              className=" rounded-lg text-lg pl-3 py-1 bg-white"
               placeholder="Rick Sanchez..."
             />
 
-            <button type='submit' className=' bg-white py-1 px-4 rounded-lg'>
+            <button type='submit' className=' bg-white py-1 px-4 rounded-lg cursor-pointer'>
               <p className="text-md">Search</p>
             </button>
           </form>
@@ -542,9 +541,7 @@ function App() {
           ? (
             <div className="flex items-center justify-center flex-col">
               {character && (
-                <Link to={`/character/${character.id}`}>
                   <Card character={character} key={character.id} />
-                </Link>
               )}
             </div>
           )
@@ -552,9 +549,7 @@ function App() {
             <div className='grid grid-cols-2 gap-3'>
               {characters && characters.length > 0 && (
                 characters.map(character => (
-                  <Link to={`/character/${character.id}`}>
                     <Card character={character} key={character.id} />
-                  </Link>
                 ))
 
               )}
